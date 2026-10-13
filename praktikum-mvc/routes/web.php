@@ -1,10 +1,32 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
+
+//mahasiswa
+use App\Http\Controllers\MahasiswaController;
+
+Route::get('/profil', [MahasiswaController::class, 'profil'])
+    ->name('mahasiswa.profil');
+
+Route::get('/mahasiswa', [MahasiswaController::class, 'daftar'])
+    ->name('mahasiswa.daftar');
+
+Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'detail'])
+    ->name('mahasiswa.detail');
+
+ // Route Produk
+Route::resource('produk', ProdukController::class);
+
+Route::permanentRedirect('/katalog-lama', '/info');
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route sederhana
+
 //Route sederhana
 Route::get('/sapa', function () {
     return 'Selamat datang di Aplikasi Perpustakaan Kampus!';
