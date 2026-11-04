@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('title', 'Daftar Produk')
@@ -48,3 +47,4 @@
 
 @push('scripts')
 @endpush
+

@@ -1,6 +1,4 @@
-```blade
 @extends('layouts.app')
-
 @section('title', 'Detail Produk')
 
 @section('content')
@@ -8,4 +6,4 @@
     <p>ID Produk: {{ $id }}</p>
     <a href="{{ route('produk.index') }}">Kembali ke Daftar Produk</a>
 @endsection
-```
+

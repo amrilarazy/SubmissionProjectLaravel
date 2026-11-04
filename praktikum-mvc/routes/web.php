@@ -4,6 +4,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
+//jurusan 
+use App\Http\Controllers\JurusanController;
+Route::get('/jurusan', [JurusanController::class, 'index']);
+Route::get('/jurusan/{id}', [JurusanController::class, 'show']);
+
 //mahasiswa
 use App\Http\Controllers\MahasiswaController;
 
@@ -16,10 +21,9 @@ Route::get('/mahasiswa', [MahasiswaController::class, 'daftar'])
 Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'detail'])
     ->name('mahasiswa.detail');
 
- // Route Produk
-Route::resource('produk', ProdukController::class);
 
-Route::permanentRedirect('/katalog-lama', '/info');
+// Route Produk
+Route::resource('produk', ProdukController::class);
 
 Route::get('/', function () {
     return view('welcome');
