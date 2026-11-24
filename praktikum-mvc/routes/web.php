@@ -2,6 +2,17 @@
 <?php
 use App\Http\Controllers\ProdukController;
 
+//UTS Kasus Data Berita
+use App\Http\Controllers\BeritaController;
+Route::get('/berita', [BeritaController::class, 'index'])
+    ->name('berita.index');
+
+Route::get('/berita/create', [BeritaController::class, 'create'])
+    ->name('berita.create');
+
+Route::post('/berita', [BeritaController::class, 'store'])
+    ->name('berita.store');
+
 //jurusan 
 use App\Http\Controllers\JurusanController;
 use Illuminate\Support\Facades\Route;
